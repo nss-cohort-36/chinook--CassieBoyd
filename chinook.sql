@@ -43,3 +43,9 @@ SELECT e.FirstName ||" "|| e.LastName AS EmployeeName, i.Total, i.BillingCountry
 FROM Employee e, Invoice i, Customer c
 WHERE e.EmployeeId = c.SupportRepId
 AND c.CustomerId = i.CustomerId;
+
+-- total_invoices_{year}.sql: How many Invoices were there in 2009 and 2011?
+
+SELECT COUNT(InvoiceDate)
+FROM Invoice
+WHERE InvoiceDate BETWEEN "2009-01-01" AND "2011-12-31";
